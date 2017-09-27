@@ -12,13 +12,10 @@ import {RestaurantDetailComponent} from './restaurant-detail/restaurant-detail.c
 import {MenuComponent} from './restaurant-detail/menu/menu.component';
 import {ShoppingCartComponent} from './restaurant-detail/shopping-cart/shopping-cart.component';
 import {MenuItemComponent} from './restaurant-detail/menu-item/menu-item.component';
-import {RestaurantsService} from './restaurants/restaurants.service';
 import {ReviewComponent} from './restaurant-detail/review/review.component';
-import {ShoppingCartService} from './restaurant-detail/shopping-cart/shopping-cart.service';
-import {NotificationService} from './shared/messages/notification.service';
-import {OrderService} from './order/order.service';
 import {OrderSummaryComponent} from './order-summary/order-summary.component';
 import {SharedModule} from './shared/shared.module';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
     declarations: [
@@ -36,20 +33,12 @@ import {SharedModule} from './shared/shared.module';
     ],
     imports: [
         BrowserModule,
+        CoreModule,
         HttpModule,
         RouterModule.forRoot(ROUTES),
         SharedModule
     ],
-    providers: [
-        RestaurantsService,
-        ShoppingCartService,
-        NotificationService,
-        OrderService,
-        {
-            provide: LOCALE_ID,
-            useValue: 'pt-BR'
-        }
-    ],
+    providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
     bootstrap: [AppComponent]
 })
 
