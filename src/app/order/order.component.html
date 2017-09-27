@@ -35,7 +35,7 @@
         </div>
         <div class="col-sm-3 col-xs-6">
           <mt-input-container>
-            <input class="form-control" name="optional" ngModel placeholder="Complemento" autocomplete="false">
+            <input class="form-control" name="optinalAddress" ngModel placeholder="Complemento" autocomplete="false">
           </mt-input-container>
         </div>
         <!-- /.col -->
@@ -61,7 +61,7 @@
           <p class="lead">Formas de Pagamento:</p>
 
           <div class="form-group">
-            <mt-radio [options]="paymentoptions" name="paymentoption" required ngModel></mt-radio>
+            <mt-radio [options]="paymentoptions" name="paymentOption" required ngModel></mt-radio>
           </div>
 
         </div>
@@ -78,7 +78,7 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <button class="btn btn-success pull-right" [disabled]="!form.valid || cartItems().length === 0">
+        <button (click)="checkOrder(form.value)" class="btn btn-success pull-right" [disabled]="!form.valid || cartItems().length === 0">
           <i class="fa fa-credit-card"></i> Concluir Pedido
         </button>
       </div>
