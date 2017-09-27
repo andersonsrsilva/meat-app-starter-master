@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
-import {RouterModule} from '@angular/router';
+import {PreloadAllModules, RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {HomeComponent} from './home/home.component';
@@ -33,7 +33,7 @@ import {SharedModule} from './shared/shared.module';
     imports: [
         BrowserModule,
         HttpModule,
-        RouterModule.forRoot(ROUTES),
+        RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
         SharedModule.forRoot()
     ],
     providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
