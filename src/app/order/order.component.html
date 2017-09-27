@@ -24,6 +24,7 @@
       <div class="row invoice-info">
         <div class="col-xs-12">
           <p class="lead">Endereço de Entrega:</p>
+          <span class="help-block pull-right has-error-block" *ngIf="orderForm.hasError('emailsNotMatch')"><i class="fa fa-check"></i> E-mails não conferem</span>
         </div>
         <div class="col-sm-6 col-xs-12">
           <mt-input-container errorMensagem="Campo obrigatório e com 5 caracteres" label="Nome">
