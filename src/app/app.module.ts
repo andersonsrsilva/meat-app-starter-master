@@ -17,6 +17,7 @@ import {OrderSummaryComponent} from './order-summary/order-summary.component';
 import {SharedModule} from './shared/shared.module';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         HttpModule,
         RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
         SharedModule.forRoot()
