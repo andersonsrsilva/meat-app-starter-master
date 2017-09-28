@@ -1,7 +1,11 @@
+import {EventEmitter} from '@angular/core';
+
 export class NotificationService {
 
-  notify(value: string): void {
-    "";
-  }
+    notifier = new EventEmitter<string>();
+
+    notify(message: string): void {
+        this.notifier.emit(message);
+    }
 
 }
